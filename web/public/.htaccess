@@ -1,0 +1,15 @@
+Options -Indexes
+RewriteEngine on
+
+# If the request is for a valid directory
+RewriteCond %{REQUEST_FILENAME} -d [OR]
+# If the request is for a valid file
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+# If the request is for a valid link
+RewriteCond %{REQUEST_FILENAME} -l
+# We skip the next three Rules.
+RewriteRule .? - [S=3]
+
+RewriteRule ^([a-zA-Z0-9_-]+)/?$ index.php?p1=$1 [L,QSA]
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/?$ index.php?p1=$1&p2=$2 [L,QSA]
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/?$ index.php?p1=$1&p2=$2&p3=$3 [L,QSA]
