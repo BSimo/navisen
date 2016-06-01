@@ -1,0 +1,46 @@
+#btn_menu{
+	position: fixed;
+	top: 0;
+	left: 0;
+	border-radius:0;
+	background-color: $primary-color;
+	img{
+		height: 25px;
+		vertical-align: middle;
+	}
+}
+.menu{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	padding-bottom: 0;
+	li{
+		flex-basis: 100%;
+		a{
+			display: flex;
+			flex-direction: row;
+			height: 100%;
+			width: 100%;
+			align-items: center;
+			img{
+				height: 64px;
+			}
+			p{
+				font-size: 1.3em;
+				width: auto;
+			}
+		}
+		button{
+			display: none;
+		}
+		label{
+			cursor: pointer;
+		}
+	}
+}
+#events_list{
+	img{
+		transform: rotate(180deg);
+	}
+}

@@ -19,7 +19,7 @@ class DB {
 
 	public function query($query) {
 		$this->nbReq++;
-
+		
 		return $this->pdo->query($query);
 	}
 

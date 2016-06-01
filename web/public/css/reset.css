@@ -1,0 +1,23 @@
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+* {
+  padding:0;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: sans-serif; /* 1 */
+  -ms-text-size-adjust: 100%; /* 2 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+body {
+  overflow-x:hidden;
+}
+
+a {
+  text-decoration: none;
+}

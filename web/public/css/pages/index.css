@@ -1,0 +1,114 @@
+#btn_menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-radius: 0;
+  background-color: #DD0613; }
+  #btn_menu img {
+    height: 25px;
+    vertical-align: middle; }
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  padding-bottom: 0; }
+  .menu li {
+    flex-basis: 100%; }
+    .menu li a {
+      display: flex;
+      flex-direction: row;
+      height: 100%;
+      width: 100%;
+      align-items: center; }
+      .menu li a img {
+        height: 64px; }
+      .menu li a p {
+        font-size: 1.3em;
+        width: auto; }
+    .menu li button {
+      display: none; }
+    .menu li label {
+      cursor: pointer; }
+
+#events_list img {
+  transform: rotate(180deg); }
+
+#btn_slide {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%); }
+  #btn_slide span {
+    cursor: pointer;
+    border: solid 0px #DDD;
+    margin: 10px;
+    display: block;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background-color: #DD0613;
+    transition: background-color 0.3s; }
+
+#my_slider {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  top: 0;
+  left: 0; }
+  #my_slider img {
+    width: 100vw;
+    transition: all 0.5s; }
+
+#mymodal {
+  background-color: #DD0613;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 2%; }
+  #mymodal img {
+    height: 32px;
+    vertical-align: middle; }
+
+#modal2 {
+  min-height: 100vh; }
+  #modal2 .modal-content {
+    padding: 0; }
+    #modal2 .modal-content nav {
+      background-color: #DD0613; }
+      #modal2 .modal-content nav a {
+        position: relative;
+        padding: 0 2%; }
+      #modal2 .modal-content nav .nav-wrapper {
+        display: flex; }
+        #modal2 .modal-content nav .nav-wrapper .exit {
+          display: flex;
+          align-items: center; }
+          #modal2 .modal-content nav .nav-wrapper .exit img {
+            height: 32px; }
+    #modal2 .modal-content .collection {
+      position: relative;
+      top: 0;
+      left: 0; }
+      #modal2 .modal-content .collection img {
+        position: absolute;
+        right: 2%;
+        height: 24px; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+html, body {
+  width: 100%;
+  height: 100%; }
+
+canvas {
+  display: block;
+  background: #eee; }
+
+* {
+  overflow: hidden; }
+
+/*# sourceMappingURL=index.css.map */

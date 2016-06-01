@@ -10,18 +10,17 @@
 // Controleur principal
 
 /* --- PDO --- */
+
 require_once '../models/DB.class.php';
 
 $db = include '../config/db.php';
 $pdo = new DB($db['dsn'], $db['host'], $db['login'], $db['pass'], $db['db']);
 
 /* --- Routeur --- */
-$p1 = isset($_GET['p1']) ? $_GET['p1'] : 'index';
+$p1 = isset($_GET['p']) ? $_GET['p'] : 'index';
 
-if(file_exists('../views/p1/' . $p1 . '.php')) {
-  include '../views/header.php';
-  include '../views/p1/' . $p1 . '.php';
-  include '../views/footer.php';
+if(file_exists('../views/p/' . $p1 . '.php')) {
+  include '../views/p/' . $p1 . '.php';
 } else
   include '../views/404.php';
 

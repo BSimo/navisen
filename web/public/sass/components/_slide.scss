@@ -1,0 +1,28 @@
+#btn_slide{
+	position: fixed;
+	right: 0;
+  	top: 50%;
+  	transform: translateY(-50%);
+	span{
+		cursor: pointer;
+		border: solid 0px #DDD;
+		margin: 10px;
+		display: block;
+		height: 16px;
+		width: 16px;
+		border-radius: 50%;
+		background-color: $primary-color;
+		transition: background-color 0.3s;
+	}
+}
+#my_slider{
+	height: 100vh;
+	width: 100vw;
+	position: relative;
+	top: 0;
+	left: 0;
+	img{
+		width: 100vw;
+		transition: all 0.5s;
+	}
+}

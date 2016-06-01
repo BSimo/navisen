@@ -1,0 +1,44 @@
+#mymodal{
+	background-color: $primary-color;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	margin:2%;
+	img{
+		height: 32px;
+		vertical-align: middle;
+	}
+}
+#modal2{
+	min-height: 100vh;
+	.modal-content{
+		padding: 0;
+		nav{
+			background-color: $primary-color;
+			a{
+				position: relative;
+				padding: 0 2%;
+			}
+			.nav-wrapper{
+				display: flex;
+				.exit{
+					display: flex;
+					align-items: center;
+					img{
+						height: 32px;
+					}
+				}
+			}
+		}
+		.collection{
+			position: relative;
+			top: 0;
+			left: 0;
+			img{
+				position: absolute;
+				right: 2%;
+				height: 24px;
+			}
+		}
+	}
+}
