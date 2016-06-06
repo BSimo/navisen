@@ -7,7 +7,9 @@ class DB {
 
 	public function __construct($dsn, $host, $login, $pass, $db) {
 		try {
-			$this->pdo = new \PDO($dsn . ':host=' . $host . ';dbname='.$db, $login, $pass);
+			$this->pdo = new PDO($dsn . ':host=' . $host . ';dbname='.$db, $login, $pass, array(
+				PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+			));
 		} catch (PDOException $e) {
 			throw new Exception('Unable to connect to {' . $driver . ':' . $host . '} on database {' . $db . '} with user {' . $login . '}.');
 		}
@@ -19,7 +21,7 @@ class DB {
 
 	public function query($query) {
 		$this->nbReq++;
-		
+
 		return $this->pdo->query($query);
 	}
 

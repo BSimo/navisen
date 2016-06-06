@@ -9,20 +9,37 @@
 
 // Controleur principal
 
-/* --- PDO --- */
-
+/* --- Submodule: PDO --- */
 require_once '../models/DB.class.php';
+require_once '../models/Secure.class.php';
 
-$db = include '../config/db.php';
-$pdo = new DB($db['dsn'], $db['host'], $db['login'], $db['pass'], $db['db']);
+$db_data = include '../config/db.php';
+$db = new DB($db_data['dsn'], $db_data['host'], $db_data['login'], $db_data['pass'], $db_data['db']);
+
+/* --- Submodule: Authentification System --- */
+require_once '../controllers/auth.php';
+$auth = new Auth($db);
+
 
 /* --- Routeur --- */
-$p1 = isset($_GET['p']) ? $_GET['p'] : 'index';
+$p = isset($_GET['p']) ? $_GET['p'] : 'index';
 
-if(file_exists('../views/p/' . $p1 . '.php')) {
-  include '../views/p/' . $p1 . '.php';
-} else
+if($p == 'ajax') {
+
+  /* --- Submodule: AJAX --- */
+  require_once '../controllers/ajax.php';
+  $ajax = new AJAX($db);
+
+} else if(file_exists('../views/p/' . $p . '.php')) {
+
+  /* --- Include the view --- */
+  include '../views/p/' . $p . '.php';
+
+} else {
+
+  /* --- 404 Not Found... --- */
   include '../views/404.php';
 
+}
 
 ?>
