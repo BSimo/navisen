@@ -3,34 +3,38 @@
 </a>
 
 <ul id="slide-out" class="side-nav full menu top_nav collapsible collapsible-accordion">
+	<li class="menu_title">
+		Navisen
+	</li>
 	<li id="where_am_i_menu">
-		<label>
-			<a>
-				<img src="img/icons/where_am_i.png"/>
-				<p>Where am I ?</p>
-			</a>
-		</label>
+		<a>
+			<img src="img/icons/where_am_i.png"/>
+			<p>Se localiser</p>
+		</a>
 	</li>
 	<li id="events_list_menu">
-		<label>
-			<a>
+		<a data-target="modal2" class="modal-trigger">
 				<img src="img/icons/events_list.png">
-				<p>Events list</p>
-				<button data-target="modal2" class="btn modal-trigger">
-				</button>
-			</a>
-		</label>
+				<p>Points d'intêret</p>
+		</a>
 	</li>
-	<li id="login_menu">
-		<label>
-			<a>
-				<img src="img/icons/unlocked.png"/>
-				<p>Log in</p>
-				<button data-target="modal3" class="btn modal-trigger">
-				</button>
+
+	<?php if(!$auth->isAuth()) { ?>
+		<li id="login_menu">
+			<a data-target="modal3" class="modal-trigger">
+					<img src="img/icons/unlocked.png"/>
+					<p>Connexion Admin</p>
 			</a>
-		</label>
-	</li>
+		</li>
+	<?php } else { ?>
+		<li id="logout_menu">
+				<a href="/?logout">
+					<img src="img/icons/unlocked.png"/>
+					<p>Déconnexion</p>
+				</a>
+		</li>
+	<?php } ?>
+
 </ul>
 
 <a href="#" data-activates="slide-out" class="button-collapse button-collapse-left">

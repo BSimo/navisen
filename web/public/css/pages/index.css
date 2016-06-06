@@ -13,7 +13,8 @@
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: space-around;
-  padding-bottom: 0; }
+  padding-bottom: 0;
+  border: none; }
   .menu li {
     flex-basis: 100%; }
     .menu li a {
@@ -21,16 +22,21 @@
       flex-direction: row;
       height: 100%;
       width: 100%;
-      align-items: center; }
+      align-items: center;
+      cursor: pointer; }
       .menu li a img {
         height: 64px; }
       .menu li a p {
         font-size: 1.3em;
         width: auto; }
-    .menu li button {
-      display: none; }
-    .menu li label {
-      cursor: pointer; }
+  .menu li.menu_title {
+    height: 55.5px;
+    flex-basis: unset;
+    background-color: #DD0613;
+    color: white;
+    text-align: center;
+    line-height: 55.5px;
+    font-size: 48px; }
 
 #events_list img {
   transform: rotate(180deg); }
@@ -107,8 +113,5 @@ html, body {
 canvas {
   display: block;
   background: #eee; }
-
-* {
-  overflow: hidden; }
 
 /*# sourceMappingURL=index.css.map */

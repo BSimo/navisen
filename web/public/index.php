@@ -9,6 +9,13 @@
 
 // Controleur principal
 
+/* --- Test Déconnexion --- */
+if(isset($_GET['logout'])) {
+  setcookie('sid', null, -1, '/');
+  header('Location: /');
+  exit;
+}
+
 /* --- Submodule: PDO --- */
 require_once '../models/DB.class.php';
 require_once '../models/Secure.class.php';

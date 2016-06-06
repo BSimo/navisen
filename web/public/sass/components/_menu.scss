@@ -15,6 +15,7 @@
 	flex-wrap: nowrap;
 	justify-content: space-around;
 	padding-bottom: 0;
+	border: none;
 	li{
 		flex-basis: 100%;
 		a{
@@ -23,6 +24,7 @@
 			height: 100%;
 			width: 100%;
 			align-items: center;
+			cursor: pointer;
 			img{
 				height: 64px;
 			}
@@ -31,12 +33,16 @@
 				width: auto;
 			}
 		}
-		button{
-			display: none;
-		}
-		label{
-			cursor: pointer;
-		}
+	}
+
+	li.menu_title {
+		height: 55.5px;
+		flex-basis: unset;
+		background-color: $primary-color;
+		color: white;
+		text-align: center;
+		line-height: 55.5px;
+		font-size: 48px;
 	}
 }
 #events_list{
