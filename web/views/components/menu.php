@@ -26,7 +26,7 @@
 			<a>
 				<img src="img/icons/unlocked.png"/>
 				<p>Log in</p>
-				<button data-target="modal1" class="btn modal-trigger">
+				<button data-target="modal3" class="btn modal-trigger">
 				</button>
 			</a>
 		</label>

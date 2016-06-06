@@ -25,7 +25,7 @@ class Auth {
   }
 
   public function retrieveUserData() {
-    $req_token = $this->db->arrPrepare("SELECT user_id FROM user_auth_token WHERE token = ?", array($this->token));
+    $req_token = $this->db->arrPrepare("SELECT user_id FROM user_auth_token WHERE user_auth_token_token = ?", array($this->token));
     if(!isset($req_token['user_id'])) // Bad Token
       return;
 
@@ -38,16 +38,18 @@ class Auth {
     $req = $this->db->arrPrepare("SELECT * FROM user WHERE user_name = ?", array($username));
 
     if(count($req) == 0)
-      return;
+      return false;
 
-    if(!Secure::testPassword($password, $req['password']))
-      return;
+    if(!Secure::testPassword($password, $req['user_pass']))
+      return false;
 
     $token = $this->generateAuthToken($req['user_id']);
 
     setcookie('sid', $token, time() + 3600, '/');
 
     $this->retrieveUserData();
+
+    return true;
   }
 
   public function generateAuthToken($user_id) {
@@ -55,7 +57,7 @@ class Auth {
       $token = sha1(Secure::randStr(32));
     } while ($this->db->arrPrepare("SELECT COUNT(*) as count FROM user_auth_token WHERE token = ?", array($token))['count'] > 0);
 
-    $this->db->queryNoReturn("INSERT INTO user_auth_token (user_id, token) VALUES (?, ?)", array($user_id, $token));
+    $this->db->queryNoReturn("INSERT INTO user_auth_token (user_id, user_auth_token_token) VALUES (?, ?)", array($user_id, $token));
 
     return $token;
   }
