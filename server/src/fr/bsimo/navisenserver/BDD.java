@@ -31,7 +31,6 @@ public class BDD {
             BDD.conn = DriverManager.getConnection("jdbc:mysql://localhost/" + db_name + "?user=" + db_user + "&password=" + db_pass);
             BDD.connected = true;
         } catch (SQLException e) {
-            System.out.println("jdbc:mysql://localhost/" + db_name + "?user=" + db_user + "&password=" + db_pass);
             System.out.println("[ERROR] Can't etablish connection to the database !");
             BDD.connected = false;
             return false;
