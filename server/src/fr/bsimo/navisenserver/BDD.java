@@ -4,9 +4,12 @@ import fr.bsimo.dijsktra.Edge;
 import fr.bsimo.dijsktra.Graph;
 import fr.bsimo.dijsktra.Vertex;
 
+import java.io.*;
+import java.net.URISyntaxException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 /**
  * Created by Ben on 25/05/16.
@@ -15,20 +18,26 @@ public class BDD {
 
     private static Connection conn = null;
     private static boolean connected = false;
-    public static void init() {
+
+    public static boolean init(String db_name, String db_user, String db_pass) {
         try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
         } catch (Exception e) {
             System.out.println("[ERROR] Can't load the JDBC Driver !");
+            return false;
         }
 
         try {
-            BDD.conn = DriverManager.getConnection("jdbc:mysql://localhost/navisen?user=navisen&password=projet");
+            BDD.conn = DriverManager.getConnection("jdbc:mysql://localhost/" + db_name + "?user=" + db_user + "&password=" + db_pass);
             BDD.connected = true;
         } catch (SQLException e) {
+            System.out.println("jdbc:mysql://localhost/" + db_name + "?user=" + db_user + "&password=" + db_pass);
             System.out.println("[ERROR] Can't etablish connection to the database !");
             BDD.connected = false;
+            return false;
         }
+
+        return true;
     }
 
     public static boolean isConnected() {

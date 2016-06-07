@@ -5,13 +5,13 @@ import java.net.Socket;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.Arrays;
-import java.util.Base64;
 
 import fr.bsimo.server.Server;
 import fr.bsimo.server.ServerClient;
 import fr.bsimo.server.event.ClientDataEvent;
 import fr.bsimo.server.event.ClientEvent;
 import org.apache.commons.codec.digest.DigestUtils;
+import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.validator.routines.InetAddressValidator;
 
 /**
@@ -114,7 +114,7 @@ public class WSServerClient extends ServerClient {
         String ans = "HTTP/1.1 101 Switching Protocols\r\n";
         ans += "Upgrade: websocket\r\n";
         ans += "Connection: Upgrade\r\n";
-        ans += "Sec-WebSocket-Accept: " + new String(Base64.getEncoder().encode(DigestUtils.sha1(hdr_ws_key + "258EAFA5-E914-47DA-95CA-C5AB0DC85B11"))) + "\r\n";
+        ans += "Sec-WebSocket-Accept: " + Base64.encodeBase64String(DigestUtils.sha1(hdr_ws_key + "258EAFA5-E914-47DA-95CA-C5AB0DC85B11")) + "\r\n";
         ans += "\r\n";
 
         this.send(ans);

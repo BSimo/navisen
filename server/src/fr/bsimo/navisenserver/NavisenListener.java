@@ -5,6 +5,7 @@ import fr.bsimo.dijsktra.Graph;
 import fr.bsimo.dijsktra.Vertex;
 import fr.bsimo.server.event.ClientDataEvent;
 import fr.bsimo.server.event.ClientEvent;
+import fr.bsimo.server.event.ServerEvent;
 import fr.bsimo.websocket.WSServerClient;
 import fr.bsimo.websocket.WSServerListener;
 import org.json.JSONArray;
@@ -25,8 +26,23 @@ public class NavisenListener implements WSServerListener {
     }
 
     @Override
+    public void onServerStart(ServerEvent e) {
+
+    }
+
+    @Override
+    public void onServerStop(ServerEvent e) {
+
+    }
+
+    @Override
     public void onClientConnect(ClientEvent e) {
         System.out.println("Client Connected: " + e.getClient().getClientInetAddress().getHostName());
+    }
+
+    @Override
+    public void onClientDisconnect(ClientEvent e) {
+
     }
 
     @Override
@@ -64,5 +80,10 @@ public class NavisenListener implements WSServerListener {
         System.out.println(ret.toString());
         WSServerClient client = (WSServerClient) e.getClient();
         client.sendTxt(ret.toString());
+    }
+
+    @Override
+    public void onClientHandshakeDone(ClientEvent e) {
+
     }
 }
