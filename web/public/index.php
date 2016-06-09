@@ -6,7 +6,7 @@
  * Mai 2016
  *
  */
-
+ error_reporting(E_ALL);
 // Controleur principal
 
 /* --- Test Déconnexion --- */
@@ -35,7 +35,7 @@ if($p == 'ajax') {
 
   /* --- Submodule: AJAX --- */
   require_once '../controllers/ajax.php';
-  $ajax = new AJAX($db);
+  $ajax = new AJAX($db, $auth);
 
 } else if(file_exists('../views/p/' . $p . '.php')) {
 

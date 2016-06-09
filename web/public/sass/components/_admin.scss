@@ -1,0 +1,37 @@
+#admin_panel{
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	width: 100vw;
+	padding-left: 5vw;
+	border-bottom: solid #ccc 1px;
+	background-color: white; 
+	flex-wrap: nowrap;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	padding: 1%;
+	#legend{
+		img{
+			height: 16px;
+		}
+	}
+	#exit_admin_panel i{
+		transform: rotate(45deg);
+	}
+}
+.admin_switch{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	margin: 1%;
+	label{	
+		:first-child{
+			color: #2ECC71;
+		}
+		:last-child{
+			color: $primary-color;
+		}
+	}
+}

@@ -8,28 +8,28 @@
 	</li>
 	<li id="where_am_i_menu">
 		<a>
-			<img src="img/icons/where_am_i.png"/>
+			<i class="material-icons">my_location</i>
 			<p>Se localiser</p>
 		</a>
 	</li>
 	<li id="events_list_menu">
 		<a data-target="modal2" class="modal-trigger">
-				<img src="img/icons/events_list.png">
-				<p>Points d'intêret</p>
+			<i class="material-icons">location_on</i>
+			<p>Points d'intêret</p>
 		</a>
 	</li>
 
 	<?php if(!$auth->isAuth()) { ?>
 		<li id="login_menu">
 			<a data-target="modal3" class="modal-trigger">
-					<img src="img/icons/unlocked.png"/>
-					<p>Connexion Admin</p>
+				<i class="material-icons">https</i>
+				<p>Connexion Admin</p>
 			</a>
 		</li>
 	<?php } else { ?>
 		<li id="logout_menu">
 				<a href="/?logout">
-					<img src="img/icons/unlocked.png"/>
+					<i class="material-icons">exit_to_app</i>
 					<p>Déconnexion</p>
 				</a>
 		</li>

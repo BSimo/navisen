@@ -19,6 +19,10 @@ class DB {
 		return $this->nbReq;
 	}
 
+	public function lastInsertId() {
+		return $this->pdo->lastInsertId();
+	}
+
 	public function query($query) {
 		$this->nbReq++;
 

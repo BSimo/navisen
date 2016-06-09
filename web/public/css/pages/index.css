@@ -1,3 +1,4 @@
+/*$primary-color: #FFC0CB;*/
 #btn_menu {
   position: fixed;
   top: 0;
@@ -24,6 +25,9 @@
       width: 100%;
       align-items: center;
       cursor: pointer; }
+      .menu li a i {
+        font-size: 6em;
+        color: #DD0613; }
       .menu li a img {
         height: 64px; }
       .menu li a p {
@@ -55,7 +59,8 @@
     width: 16px;
     border-radius: 50%;
     background-color: #DD0613;
-    transition: background-color 0.3s; }
+    transition: background-color 0.3s;
+    border: 1px solid #555; }
 
 #my_slider {
   height: 100vh;
@@ -102,6 +107,87 @@
         right: 2%;
         height: 24px; }
 
+#image-map {
+  width: 100vw;
+  height: 100vh; }
+
+.leaflet-container {
+  background: white; }
+
+#admin_panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100vw;
+  padding-left: 5vw;
+  border-bottom: solid #ccc 1px;
+  background-color: white;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1%; }
+  #admin_panel #legend img {
+    height: 16px; }
+  #admin_panel #exit_admin_panel i {
+    transform: rotate(45deg); }
+
+.admin_switch {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  margin: 1%; }
+  .admin_switch label :first-child {
+    color: #2ECC71; }
+  .admin_switch label :last-child {
+    color: #DD0613; }
+
+#roomModal {
+  height: 20vh;
+  max-height: 20vh; }
+  #roomModal .modal-content div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center; }
+    #roomModal .modal-content div #exit_point_config_panel {
+      transform: rotate(45deg); }
+    #roomModal .modal-content div h4 {
+      color: #DD0613; }
+    #roomModal .modal-content div a {
+      display: flex;
+      align-items: center;
+      justify-content: space-around; }
+      #roomModal .modal-content div a img {
+        height: 32px; }
+  #roomModal #mark_form h5 {
+    color: #DD0613;
+    padding-right: 0.5em; }
+  #roomModal #qrcode {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 2vh; }
+    #roomModal #qrcode canvas {
+      display: none; }
+
+#locateModalBtn {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 1%; }
+
+#locateModal {
+  height: 400px;
+  width: 450px;
+  max-height: 400px;
+  max-width: 450px; }
+  #locateModal .modal-footer {
+    position: absolute;
+    bottom: 0; }
+
 * {
   margin: 0;
   padding: 0; }
@@ -113,5 +199,8 @@ html, body {
 canvas {
   display: block;
   background: #eee; }
+
+.leaflet-control-container {
+  display: none; }
 
 /*# sourceMappingURL=index.css.map */

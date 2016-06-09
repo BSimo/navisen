@@ -58,6 +58,9 @@ public class NavisenListener implements WSServerListener {
 
         if(from == null || to == null) return;
 
+        if(from == to)
+            return;
+        
         DijkstraAlgorithm dijkstra = new DijkstraAlgorithm(graph);
         dijkstra.execute(from);
         LinkedList<Vertex> path = dijkstra.getPath(to);

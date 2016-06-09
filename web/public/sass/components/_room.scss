@@ -1,0 +1,43 @@
+#roomModal{
+	height:20vh;
+	max-height:20vh;
+	.modal-content{
+		div{
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			align-items: center;
+			#exit_point_config_panel{
+				transform: rotate(45deg);
+			}
+			h4{
+				color: $primary-color;
+			}
+			a{
+				display: flex;
+				align-items: center;
+				justify-content: space-around;
+				img{
+					height: 32px;
+				}
+			}
+		}
+
+	}
+	#mark_form{
+		h5{
+			color: $primary-color;
+			padding-right: 0.5em;
+		}
+	}
+	#qrcode{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		align-items: center;
+		margin-top: 2vh;
+		canvas{
+			display: none;
+		}
+	}
+}

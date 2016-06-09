@@ -2,6 +2,10 @@
 @import "../components/menu";
 @import "../components/slide";
 @import "../components/events_list";
+@import "../components/map";
+@import "../components/admin";
+@import "../components/room";
+@import "../components/locate";
 
 * {
   margin: 0;
@@ -16,4 +20,8 @@ html, body {
 canvas {
   display: block;
   background: #eee;
+}
+
+.leaflet-control-container {
+	display: none;
 }

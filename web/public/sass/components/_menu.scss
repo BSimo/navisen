@@ -25,6 +25,10 @@
 			width: 100%;
 			align-items: center;
 			cursor: pointer;
+			i{
+				font-size: 6em;
+				color: $primary-color;
+			}
 			img{
 				height: 64px;
 			}

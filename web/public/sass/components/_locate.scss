@@ -1,0 +1,16 @@
+#locateModalBtn{
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	margin: 1%;
+}
+ #locateModal{
+	height: 400px;
+	width: 450px;
+	max-height: 400px;
+	max-width: 450px;
+	.modal-footer{
+		position: absolute;
+		bottom:0;
+	}
+}
